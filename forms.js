@@ -1,6 +1,3 @@
-var el = document.createElement("script");
-el.setAttribute("src","https://cdn.jsdelivr.net/gh/bushbushsaur/bushbushsaur.github.io/jquery.js");
-document.body.appendChild(el);
 function formJSPro() {
     $("form[formjspro] input:not(:first-child)").each(function() {
         $(this).css("margin-top","8px");
