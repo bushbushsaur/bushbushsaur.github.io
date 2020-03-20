@@ -18,7 +18,7 @@ This repository contains files that I have made that can be used to help work wi
   - [ ] jquery.js
     - [ ] `$()`
     - [ ] `jQuery()`
-    - [x] `.load()` *Note: a new `.load()` was made for this site that loads HTML content from a website. It works better than the usual `.load()` for me, so if you want to use it, go ahead!*
+    - [ ] `.load()` *Note: a new `.load()` was made for this site that loads HTML content from a website. It works better than the usual `.load()` for me, so if you want to use it, go ahead!*
   - [ ] jquery-ui.js
     - [ ] `$()`
     - [ ] `jQuery()`
