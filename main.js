@@ -1,1 +1,1 @@
-$("nav").load("nav.html");
+$("<nav>").load("nav.html").prependTo("body");
