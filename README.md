@@ -9,3 +9,7 @@ This repository contains files that I have made that can be used to help work wi
 ### forms.js
 ##### `formJSPro()`
 ##### `formJS()`
+
+### jquery.js
+##### `$()`
+##### `jQuery()`
