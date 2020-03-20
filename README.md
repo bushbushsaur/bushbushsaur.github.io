@@ -2,7 +2,7 @@
 This repository contains files that I have made that can be used to help work with webpages.
 
 ## What Does This Contain?
-*Note: If an item is checked, we have documentation on it. Otherwise we don't.*
+*Note: If an item is checked, we have documentation on it at the wiki.*
 
 - [x] images.js: `showOnClick()`
 - [x] forms.js: `formJSPro()`
