@@ -1,1 +1,1 @@
-$("<nav>").load("nav.html").prependTo("body");
+var pages = [["Home","https://bushbushsaur.github.io/"],["About Me","aboutme.html"]];
