@@ -3,9 +3,9 @@ This repository contains files that I have made that can be used to help work wi
 
 ## What Does This Contain?
 
-### `images.js`
+### images.js
 ##### `showOnClick()`
 
-### `forms.js`
+### forms.js
 ##### `formJSPro()`
 ##### `formJS()`
