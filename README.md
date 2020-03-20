@@ -27,6 +27,10 @@ The `formJSPro()` function styles forms to make them look great. It also helps o
 ```HTML
 <form formjspro>...</form>
 ```
+*For a quiz, use this format for input elements:*
+```HTML
+<input answers="(semicolon-seperated-answers)">
+```
 ###### JavaScript
 ```javascript
 formJSPro();
