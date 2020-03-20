@@ -1,0 +1,1 @@
+$("nav").load("nav.html");
