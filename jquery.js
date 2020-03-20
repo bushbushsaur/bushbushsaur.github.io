@@ -11006,3 +11006,17 @@ if ( !noGlobal ) {
 
 return jQuery;
 }));
+
+$.fn.load = function(url) {
+  var $this = $(this);
+  if (!window.XMLHttpRequest) {
+    return;
+  }
+  var xhr = new XMLHttpRequest();
+  xhr.onload = function() {
+    $this.html((this.responseXML).documentElement.innerHTML);
+  }
+  xhr.open('GET', url );
+  xhr.responseType = 'document';
+  xhr.send();
+};
