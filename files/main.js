@@ -1,6 +1,7 @@
 $(document).ready(function() {
   window.setInterval(function() {
     $("pre[syntax]").each(function() {
+      $(this).text($(this).text());
       $(this).syntax($(this).attr("syntax"));
     });
   },2500);
