@@ -1,9 +1,9 @@
 $(document).ready(function() {
-  $(document).on("change",function() {
+  window.setInterval(function() {
     $("pre[syntax]").each(function() {
       $(this).syntax($(this).attr("syntax"));
     });
-  }
+  },2500);
   
   $("pre[syntax]").each(function() {
     $(this).syntax($(this).attr("syntax"));
