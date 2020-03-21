@@ -1,0 +1,186 @@
+/* Theme Colors */
+:root {
+  --theme-orange: #f4bf75;
+  --theme-green: #b5e853;
+  --theme-light-blue: #63c0f5;
+  --theme-purple: #aa759f;
+  --theme-brown: #d28445;
+  --theme-grey: #c0c0c0;
+}
+
+/* Set the background to a light black */
+body {
+  background: #151515;
+}
+
+/* Here we set the default font settings for the page. */
+* {
+  font-family: "Source Code Pro", monospace;
+  font-size: 16px;
+  color: white;
+}
+
+/* Set the default look for headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  margin: 8px 0px;
+  color: var(--theme-green);
+}
+
+/* Set font sizes for headings */
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.8em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4, h5, h6 {
+  font-size: 1em;
+}
+
+/* Set the colors for h5s and h6s as we have used up all the sizes available */
+h5, h6 {
+  color: var(--theme-grey);
+}
+
+/* Make h6s italic */
+h6 {
+  font-style: italic;
+}
+
+/* Display all ol elements the same way */
+ol {
+  list-style-type: decimal;
+}
+
+/* Create custom list-styles for li elements in ul elements */
+ul {
+  list-style-type: none;
+  padding-left: 12px;
+}
+
+ul li:before {
+  content: ">> ";
+  color: var(--theme-green);
+}
+
+/* Create styles for inline code blocks */
+code {
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--theme-purple);
+  padding: 0px 3px;
+  border-radius: 4px;
+  background: black;
+  margin: 0px -3px;
+}
+
+/* Create styles for non-inline code blocks */
+pre {
+  border: 1px solid #808080;
+  padding: 4px;
+  border-radius: 4px;
+  background: black;
+}
+
+/* Create styles for links */
+a {
+  color: var(--theme-light-blue);
+  text-decoration: underline;
+  /* We want links' underlines to be hidden until you hover over them */
+  text-decoration-color: transparent;
+  transition: 0.1s;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration-color: var(--theme-light-blue);
+}
+
+/* Create styles for tables */
+table {
+  text-align: left;
+  width: 100%;
+}
+
+tr:first-child th {
+  border-bottom: 1px dashed var(--theme-green);
+  padding-bottom: 8px;
+  color: var(--theme-green);
+}
+
+/* Create custom styles for button */
+button {
+  border: 1px solid rgba(255,255,255,0.15);
+  background: black;
+  border-radius: 4px;
+  box-shadow: 0px 0px 4px 2px white;
+  cursor: pointer;
+  transition: 0.4s;
+  margin: 6px;
+  margin-left: 0px;
+  margin-right: 12px;
+}
+
+button[first] {
+  margin-left: 6px;
+}
+
+button[fullwidth] {
+  width: 100%;
+  display: block;
+  margin: 6px 0px;
+  padding: 4px 0px;
+}
+
+button:hover {
+  box-shadow: 0px 0px 2px 1px white;
+}
+
+/* Create custom styles for button */
+input {
+  border: 1px solid rgba(255,255,255,0.15);
+  background: black;
+  border-radius: 4px;
+  box-shadow: inset 0px 0px 4px 1px white;
+  cursor: pointer;
+  transition: 0.2s;
+  margin: 6px 0px;
+  padding: 4px 4px;
+  width: calc(100% - 8px);
+  outline: 0px;
+}
+
+input:focus {
+  box-shadow: inset 0px 0px 4px 2px white;
+}
+
+input[inline] {
+  border: none;
+  width: 57.6px;
+  color: var(--theme-green);
+  box-shadow: none;
+  border-bottom: 1px solid var(--theme-green);
+}
+
+/* Make the first heading on a page a title. */
+#title {
+  font-size: 2.5em;
+  text-align: center;
+}
+
+#subtitle {
+  color: #c0c0c0;
+  font-weight: bold;
+}
+
+/* Create custom horizontal line */
+hr {
+  border: none;
+  border-bottom: 1px dashed var(--theme-green);
+}
