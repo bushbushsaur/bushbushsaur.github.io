@@ -1,4 +1,10 @@
 $(document).ready(function() {
+  $(document).on("change",function() {
+    $("pre[syntax]").each(function() {
+      $(this).syntax($(this).attr("syntax"));
+    });
+  }
+  
   $("pre[syntax]").each(function() {
     $(this).syntax($(this).attr("syntax"));
   });
