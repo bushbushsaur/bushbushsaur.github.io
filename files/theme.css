@@ -184,3 +184,17 @@ hr {
   border: none;
   border-bottom: 1px dashed var(--theme-green);
 }
+
+/* Create custom blockquotes */
+blockquote {
+  border-left: 1px dashed var(--theme-green);
+  margin: 16px 40px;
+  padding: 5px 10px;
+  font-style: italic;
+}
+
+/* Create custom definition lists */
+dt {
+  font-weight: bold;
+  font-style: italic;
+}
