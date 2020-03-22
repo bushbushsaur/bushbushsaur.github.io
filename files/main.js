@@ -1,6 +1,6 @@
 $(document).ready(function() {
   window.setInterval(function() {
-    $("pre[syntax]").each(function() {
+    $("pre[syntax]").blur(function() {
       $(this).text($(this).text());
       $(this).syntax($(this).attr("syntax"));
     });
