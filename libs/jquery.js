@@ -11344,3 +11344,13 @@ $.fn.syntax = function(mode) {
     return [-1, -1, func];
   }  
 }
+
+$.fn.inFrame = function(selector) {
+  if ($(this).is(":not(iframe)")) {
+    return this;
+  }
+  if (selector === undefined) {
+    return $($(this)[0].contentDocument);
+  }
+  return $($(this)[0].contentDocument).find(selector);
+}
