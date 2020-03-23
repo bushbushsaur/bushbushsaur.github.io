@@ -1,4 +1,16 @@
 $(document).ready(function() {
+  var navBar =
+    '<nav>' +
+      '<a href="/index.html">Home</a>' +
+      '<a href="/pages/about-me.html">Home</a>' +
+      '<span name="learn-html">Learn HTML & CSS</span>' +
+        '<div for="learn-html">' +
+          '<a href="/pages/learn-html/learn-html.html">Learn HTML & CSS</a>' +
+        '</div>' +
+    '</nav>'
+  ;
+  $(navBar).prependTo("body");
+  
   $("nav span").click(function() {
     var $span = $(this);
     var $div = $("nav div[for=" + $span.attr("name") + "]");
@@ -47,6 +59,9 @@ $(document).ready(function() {
   $("input[value]").on("blur",function() {
     if ($(this).val() === "") {
       $(this).val($(this).attr("value"));
+      if ($(this).is("[inline]")) {
+        $(this).css("width",$(this).attr("value").length * 9.6);
+      }
     }
   });
 });
