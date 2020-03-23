@@ -86,6 +86,13 @@ pre {
   padding: 4px;
   border-radius: 4px;
   background: black;
+  width: calc(100% - 10px);
+  overflow-x: scroll;
+}
+
+pre span::selection {
+  background-color: #c0c0c0;
+  color: none;
 }
 
 /* Create styles for links */
