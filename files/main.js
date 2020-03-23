@@ -10,9 +10,10 @@ $(document).ready(function() {
       '<span name="developers">For Developers</span>' +
         '<div for="developers">' +
           '<a href="/pages/developers/index.html">Home</a>' +
-          '<a href="https://github.com/bushbushsaur/bushbushsaur.github.io/">Source Code</a>' +
+          '<a href="/source">Source Code</a>' +
           '<a href="https://trinket.io/embed/html/34ee0825d9">Development Version</a>' +
         '</div>' +
+      '<a href="/editor">Editor</a>' +
     '</nav>'
   ;
   $(navBar).prependTo("body");
