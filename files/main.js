@@ -5,7 +5,13 @@ $(document).ready(function() {
       '<a href="/pages/about-me.html">Home</a>' +
       '<span name="learn-html">Learn HTML & CSS</span>' +
         '<div for="learn-html">' +
-          '<a href="/pages/learn-html/learn-html.html">Learn HTML & CSS</a>' +
+          '<a href="/pages/learn-html/index.html">Home</a>' +
+        '</div>' +
+      '<span name="developers">For Developers</span>' +
+        '<div for="developers">' +
+          '<a href="/pages/developers/index.html">Home</a>' +
+          '<a href="https://github.com/bushbushsaur/bushbushsaur.github.io/">Source Code</a>' +
+          '<a href="https://trinket.io/embed/html/34ee0825d9">Development Version</a>' +
         '</div>' +
     '</nav>'
   ;
