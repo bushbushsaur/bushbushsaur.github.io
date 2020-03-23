@@ -37,11 +37,11 @@ nav div {
 
 /* Make sure people know what pages are subpage holders and which are open */
 nav span::after {
-  content: " " url("down-arrow.png");
+  content: " " url("/images/up-arrow.png");
 }
 
 nav span.active::after {
-  content: " " url("up-arrow.png");
+  content: " " url("/images/down-arrow.png");
 }
 
 /* Make sure navigation bar is not-selectable */
