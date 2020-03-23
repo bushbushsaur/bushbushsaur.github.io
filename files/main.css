@@ -1,5 +1,5 @@
 /* Create navigation bar */
-nav {
+nav, nav div {
   position: fixed;
   top: 0px;
   left: 0px;
@@ -7,27 +7,46 @@ nav {
   height: 40px;
   font-size: 16px;
   background: rgba(0,0,0,0.8);
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-bottom: 1px solid var(--theme-green);
 }
 
 /* Adjust links to match background */
-nav > a {
+nav a, nav span {
   color: white;
   text-decoration: none;
   font-family: "Times New Roman", serif;
   font-size: 16px;
   font-weight: bold;
-  padding: 12px;
+  padding: 10px;
   position: relative;
   top: 10px;
   transition: 0.3s;
   margin: 0px;
+  cursor: pointer;
 }
 
 /* Create :hover states for navigation links */
-nav > a:hover {
+nav a:hover, nav span:hover, nav span.active {
   background: rgba(255,255,255,0.3);
+}
+
+/* Make sure subpages are hidden */
+nav div {
+  display: none;
+}
+
+/* Make sure people know what pages are subpage holders and which are open */
+nav span::after {
+  content: " " url("down-arrow.png");
+}
+
+nav span.active::after {
+  content: " " url("up-arrow.png");
+}
+
+/* Make sure navigation bar is not-selectable */
+nav, nav * {
+  user-select: none;
 }
 
 /* Make sure body is visible until scrolled */
