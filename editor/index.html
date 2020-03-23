@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Code Editor</title>
+    <script src="https://cdn.jsdelivr.net/gh/bushbushsaur/bushbushsaur.github.io/libs/jquery.js"></script>
+    <style>
+      html {
+        background: black;
+        overflow: hidden;
+      }
+      
+      pre, iframe {
+        width: 50%;
+        height: calc(100% - 70px);
+        position: absolute;
+        top: 70px;
+        margin: 0px;
+        border: 0px;
+        overflow: scroll;
+      }
+      
+      iframe {
+        background: white;
+        left: 50%;
+      }
+      
+      pre {
+        outline: none;
+        padding: 4px;
+        border-radius: 4px;
+        color: white;
+        font-weight: bold;
+        left: 0px;
+        width: calc(50% - 8px);
+        height: calc(100% - 78px);
+      }
+      
+      h1 {
+        font-style: italic;
+        position: absolute;
+        margin: 0px;
+        border: 0px;
+        color: white;
+        text-align: center;
+        height: 20px;
+        font-size: 20px;
+        text-align: center;
+        background: #404040;
+        display: block;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+        padding: 10px 0px;
+      }
+      
+      i {
+        position: absolute;
+        top: 40px;
+        background: #404040;
+        display: block;
+        width: 100%;
+        height: 20px;
+        left: 0px;
+        padding: 5px 0px;
+        color: white;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe></iframe>
+    <pre contenteditable>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+    <h1>Untitled document</h1>
+    <i>Note: syntax highlighting is applied when you click this bar.</i>
+    <script>
+      $("pre").on("keyup change click",function() {
+        var frame = $("iframe")[0].contentDocument;
+        frame.body.innerHTML = $("pre").text();
+        if ($($("iframe")[0].contentDocument.body).find("title").length > 0 && $($("iframe")[0].contentDocument.body).find("title").text() != "") {
+          $("h1").text($($("iframe")[0].contentDocument.body).find("title").text()).css("font-style","normal");
+        } else {
+          $("h1").text("Untitled document").css("font-style","italic");
+        }
+      });
+      
+      $("pre").on("blur",function() {
+        var html = $("pre").html();
+        html = html.replace(/<div>/g,"<br>");
+        html = html.replace(/<\/div>/g,"");
+        html = html.replace(/<(\/)?span.*?>/g,"");
+        html = html.replace(/</g,"&lt;");
+        html = html.replace(/>/g,"&gt;");
+        html = html.replace(/"/g,"&quot;");
+        $("pre").html(html).syntax();
+      });
+      
+      $("pre").blur();
+    </script>
+  </body>
+</html>
