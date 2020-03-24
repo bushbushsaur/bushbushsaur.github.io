@@ -11,14 +11,11 @@ $(document).ready(function() {
         '<div for="developers">' +
           '<a href="/pages/developers/index.html">Home</a>' +
           '<a href="/source">Source Code</a>' +
-          '<a href="https://trinket.io/embed/html/34ee0825d9">Development Version</a>' +
         '</div>' +
       '<a href="/editor">Editor</a>' +
     '</nav>'
   ;
   $(navBar).prependTo("body");
-  
-  $($('<iframe src="/header.html"></iframe>').frame().html()).appendTo("head");
   
   $("nav span").click(function() {
     var $span = $(this);
