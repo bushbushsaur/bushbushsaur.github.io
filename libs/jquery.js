@@ -11345,8 +11345,8 @@ $.fn.syntax = function(mode) {
   }  
 }
 
-$.fn.inFrame = function(selector) {
-  if ($(this).is(":not(iframe)")) {
+$.fn.frame = function(selector) {
+  if ($($(this)[0]).is(":not(iframe)")) {
     return this;
   }
   if (selector === undefined) {
