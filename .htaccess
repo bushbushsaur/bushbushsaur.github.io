@@ -1,8 +1,5 @@
 ErrorDocument 404 /404.html
 
-RedirectMatch 403 ^/secret/?$
-ErrorDocument 403 default
-
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
