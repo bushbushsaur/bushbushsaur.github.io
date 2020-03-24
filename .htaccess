@@ -1,6 +1,1 @@
 ErrorDocument 404 /404.html
-
-AuthUserFile /.htpasswd
-AuthName "Login Details"
-AuthType Basic
-require valid-user
