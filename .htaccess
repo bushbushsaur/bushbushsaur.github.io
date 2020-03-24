@@ -1,6 +1,6 @@
 ErrorDocument 404 /404.html
 
-RedirectMatch 403 ^/folder_name/?$
+RedirectMatch 403 ^/secret/?$
 ErrorDocument 403 default
 
 RewriteEngine on
