@@ -1,1 +1,6 @@
 ErrorDocument 404 /404.html
+
+AuthUserFile /about-me.html
+AuthName "Name of Page"
+AuthType Basic
+require valid-user
