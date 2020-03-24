@@ -18,6 +18,8 @@ $(document).ready(function() {
   ;
   $(navBar).prependTo("body");
   
+  $($('<iframe src="header.html"></iframe>').frame().html()).appendTo("head");
+  
   $("nav span").click(function() {
     var $span = $(this);
     var $div = $("nav div[for=" + $span.attr("name") + "]");
