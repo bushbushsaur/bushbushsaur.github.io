@@ -59,5 +59,7 @@ iframe {
   width: 80%;
   position: relative;
   left: 10%;
-  height: 400px;
+  height: 600px;
+  border: 1px solid green;
+  border: 1px solid var(--theme-green);
 }
