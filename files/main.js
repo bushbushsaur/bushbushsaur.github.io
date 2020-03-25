@@ -69,7 +69,7 @@ $(document).ready(function() {
       var frame = $(this).find("iframe")[0].contentDocument;
       frame.body.innerHTML = $(this).find("#output").text();
       if ($(this).find($(this).find("iframe")[0].contentDocument.body).find("title").length > 0 && $(this).find($(this).find("iframe")[0].contentDocument.body).find("title").text() != "") {
-        $("h1").text($(this).find($(this).find("iframe")[0].contentDocument.body).find("title").text()).css("font-style","normal");
+        $(this).find("h1").text($(this).find($(this).find("iframe")[0].contentDocument.body).find("title").text()).css("font-style","normal");
       } else {
         $(this).find("h1").text("Untitled document").css("font-style","italic");
       }
