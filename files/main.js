@@ -55,6 +55,15 @@ $(document).ready(function() {
     var $samp = $(this).hide();
     var frame = document.createElement("iframe");
     frame.setAttribute("src","/editor.html");
+    if ($samp.attr("x-small") !== undefined) {
+      frame.setAttribute("x-small","x-small");
+    } else if ($samp.attr("small") !== undefined) {
+      frame.setAttribute("small","small");
+    }
+    if ($samp.html() == "") {
+      $(frame).insertAfter($samp);
+      return;
+    }
     frame.setAttribute("code",$samp.html());
     $(frame).hide().insertAfter($samp);
   });
