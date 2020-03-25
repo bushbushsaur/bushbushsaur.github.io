@@ -56,12 +56,20 @@ $(document).ready(function() {
     var frame = document.createElement("iframe");
     frame.setAttribute("src","/editor.html");
     frame.setAttribute("code",$samp.html());
-    $(frame).insertAfter($samp);
+    $(frame).hide().insertAfter($samp);
     $(frame.contentDocument).ready(function() {
       frame.contentDocument.getElementById("input").innerHTML = $samp.html();
       $(frame.contentDocument.getElementById("input")).keyup();
     });
   });
+  
+  window.setTimeout(function() {
+    $("iframe[code]").each(function() {
+      $(this)[0].contentDocument.getElementById("input").innerHTML = $(this)[0].getAttribute("code");
+      $($(this)[0].contentDocument.getElementById("input")).keyup();
+      $(this).show();
+    });
+  },1000);
 
   $("input[inline][placeholder]").each(function() {
     $(this).css("width",$(this).attr("placeholder").length * 9.6);
