@@ -63,3 +63,15 @@ iframe {
   border: 1px solid green;
   border: 1px solid var(--theme-green);
 }
+
+iframe[small] {
+  width: 60%;
+  left: 20%;
+  height: 400px;
+}
+
+iframe[x-small] {
+  width: 60%;
+  left: 20%;
+  height: 200px;
+}
