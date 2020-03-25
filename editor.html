@@ -121,7 +121,7 @@
       
       var $code = $("#output");
       
-      $("#input").on("keypress keyup change",function() {
+      $("#input").on("keypress keyup change scroll",function() {
         $code.html($("#input").html()).syntax();
         var frame = $("iframe")[0].contentDocument;
         frame.body.innerHTML = $code.text();
@@ -130,6 +130,8 @@
         } else {
           $("h1").text("Untitled document").css("font-style","italic");
         }
+        $("#output").scrollLeft($("#input").scrollLeft());
+        $("#output").scrollTop($("#input").scrollTop());
       });
       
       $("#input").keyup();
