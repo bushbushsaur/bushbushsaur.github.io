@@ -52,13 +52,12 @@ $(document).ready(function() {
   });
     
   $("samp").each(function() {
-    var $samp = $(this);
+    var $samp = $(this).hide();
     var frame = document.createElement("iframe");
     frame.setAttribute("src","/editor.html");
+    $(frame).insertAfter($samp);
     $(frame.contentDocument).ready(function() {
       frame.contentDocument.getElementById("input").innerHTML = $samp.html();
-      $(frame).insertAfter($samp);
-      $samp.remove();
     });
   });
 
