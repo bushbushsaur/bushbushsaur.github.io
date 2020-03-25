@@ -53,3 +53,11 @@ nav, nav * {
 body {
   margin-top: 48px;
 }
+
+/* Make iframes wide */
+iframe {
+  width: 80%;
+  position: relative;
+  left: 10%;
+  height: 400px;
+}
