@@ -61,7 +61,7 @@ $(document).ready(function() {
   
   window.setTimeout(function() {
     $("iframe[code]").each(function() {
-      $($(this)[0].contentDocument.getElementById("input")).html($(this)[0].getAttribute("code")).trigger("keyup");
+      $($(this)[0].contentDocument.getElementById("input")).html($(this)[0].getAttribute("code")).trigger("keypress");
       $(this).show();
     });
   },500);
