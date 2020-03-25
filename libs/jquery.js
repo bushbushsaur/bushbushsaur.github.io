@@ -11033,12 +11033,12 @@ $.fn.syntax = function(mode) {
   var cssselectorcolor = "#e7f067";
   var csspropertycolor = "#659de6";
   var csspropertyvaluecolor = "#ed5fe6";
-  var cssdelimitercolor = "white";
-  var cssimportantcolor = "red";  
+  var cssdelimitercolor = "#13f217";
+  var cssimportantcolor = "#ff8080";  
   var jscolor = "white";
   var jskeywordcolor = "#ed5fe6";
   var jsstringcolor = "#e7f067";
-  var jsnumbercolor = "red";
+  var jsnumbercolor = "#ff8080";
   var jspropertycolor = "#2ab0a4";
   if (!lang || (lang != "html" && lang != "css" && lang != "js")) {lang = "html";}
   if (lang == "html") {elmntTxt = htmlMode(elmntTxt);}
@@ -11343,14 +11343,4 @@ $.fn.syntax = function(mode) {
     }  
     return [-1, -1, func];
   }  
-}
-
-$.fn.frame = function(selector) {
-  if ($($(this)[0]).is(":not(iframe)")) {
-    return this;
-  }
-  if (selector === undefined) {
-    return $($(this)[0].contentDocument);
-  }
-  return $($(this)[0].contentDocument).find(selector);
 }
