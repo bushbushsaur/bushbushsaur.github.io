@@ -55,9 +55,11 @@ $(document).ready(function() {
     var $samp = $(this).hide();
     var frame = document.createElement("iframe");
     frame.setAttribute("src","/editor.html");
+    frame.setAttribute("code",$samp.html());
     $(frame).insertAfter($samp);
     $(frame.contentDocument).ready(function() {
       frame.contentDocument.getElementById("input").innerHTML = $samp.html();
+      $(frame.contentDocument.getElementById("input")).keyup();
     });
   });
 
