@@ -57,16 +57,23 @@ $(document).ready(function() {
     frame.setAttribute("src","/editor.html");
     frame.setAttribute("code",$samp.html());
     $(frame).hide().insertAfter($samp);
-    $(frame.contentDocument).ready(function() {
-      frame.contentDocument.getElementById("input").innerHTML = $samp.html();
-      $(frame.contentDocument.getElementById("input")).keyup();
-    });
   });
   
   window.setTimeout(function() {
     $("iframe[code]").each(function() {
       $(this)[0].contentDocument.getElementById("input").innerHTML = $(this)[0].getAttribute("code");
+      $($(this)[0].contentDocument.getElementById("output")).html($(this)[0].getAttribute("code")).syntax();
       $($(this)[0].contentDocument.getElementById("input")).keyup();
+      
+      $(this).find("#output").html($(this).find("#input").html()).syntax();
+      var frame = $(this).find("iframe")[0].contentDocument;
+      frame.body.innerHTML = $(this).find("#output").text();
+      if ($(this).find($(this).find("iframe")[0].contentDocument.body).find("title").length > 0 && $(this).find($(this).find("iframe")[0].contentDocument.body).find("title").text() != "") {
+        $("h1").text($(this).find($(this).find("iframe")[0].contentDocument.body).find("title").text()).css("font-style","normal");
+      } else {
+        $(this).find("h1").text("Untitled document").css("font-style","italic");
+      }
+      
       $(this).show();
     });
   },1000);
