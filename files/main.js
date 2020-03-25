@@ -61,10 +61,10 @@ $(document).ready(function() {
   
   window.setTimeout(function() {
     $("iframe[code]").each(function() {
-      $($(this)[0].contentDocument.getElementById("input")).html($(this)[0].getAttribute("code")).scrollTop(0);
+      $($(this)[0].contentDocument.getElementById("input")).html($(this)[0].getAttribute("code")).trigger("keyup");
       $(this).show();
     });
-  },1000);
+  },500);
 
   $("input[inline][placeholder]").each(function() {
     $(this).css("width",$(this).attr("placeholder").length * 9.6);
