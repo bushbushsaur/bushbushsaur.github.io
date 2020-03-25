@@ -90,7 +90,7 @@ pre {
   overflow-x: scroll;
 }
 
-pre span::selection {
+pre::selection, pre *::selection {
   background-color: #c0c0c0;
   color: none;
 }
