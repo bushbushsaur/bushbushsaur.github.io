@@ -55,9 +55,11 @@ $(document).ready(function() {
     var $samp = $(this);
     var frame = document.createElement("iframe");
     frame.setAttribute("src","/editor.html");
-    frame.contentDocument.getElementById("input").innerHTML = $samp.html();
-    $(frame).insertAfter($samp);
-    $samp.remove();
+    $(frame.contentDocument).ready(function() {
+      frame.contentDocument.getElementById("input").innerHTML = $samp.html();
+      $(frame).insertAfter($samp);
+      $samp.remove();
+    });
   });
 
   $("input[inline][placeholder]").each(function() {
