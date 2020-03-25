@@ -1,22 +1,19 @@
 $(document).ready(function() {
   var navBar =
     '<nav>' +
-      '<a href="/index.html">Home</a>' +
-      '<a href="/about-me.html">About Me</a>' +
+      '<a href="/">Home</a>' +
+      '<a href="/about-me">About Me</a>' +
       '<span name="learn-html">Learn HTML & CSS</span>' +
         '<div for="learn-html">' +
-          '<a href="/learn-html/index.html">Home</a>' +
-          '<a name="learn-html/h_">&lt;h_&gt;</a>' +
+          '<a href="/learn-html">Home</a>' +
+          '<a name="/learn-html/h_">&lt;h_&gt;</a>' +
         '</div>' +
       '<span name="developers">For Developers</span>' +
         '<div for="developers">' +
-          '<a href="/pages/developers/index.html">Home</a>' +
+          '<a href="/pages/developers">Home</a>' +
           '<a href="/source">Source Code</a>' +
         '</div>' +
-      '<span name="editor">Code Editor</span>' +
-        '<div for="editor">' +
-          '<a href="/editor.html">Code Editor</a>' +
-        '</div>' +
+      '<a href="/editor.html">Code Editor</a>' +
     '</nav>'
   ;
   $(navBar).prependTo("body");
