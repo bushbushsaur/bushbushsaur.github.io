@@ -6,6 +6,7 @@ $(document).ready(function() {
       '<span name="learn-html">Learn HTML & CSS</span>' +
         '<div for="learn-html">' +
           '<a href="/learn-html/index.html">Home</a>' +
+          '<a name="learn-html/h_">&lt;h_&gt;</a>' +
         '</div>' +
       '<span name="developers">For Developers</span>' +
         '<div for="developers">' +
@@ -46,8 +47,19 @@ $(document).ready(function() {
     }
   });
   
-  $("pre[syntax]").each(function() {
+  $("[syntax]").each(function() {
     $(this).syntax($(this).attr("syntax"));
+  });
+  
+  $("samp").each(function() {
+    var $this = $(this);
+    var html = $(this).html();
+    var $iframe = $('<iframe src="/editor.html">');
+    $($iframe[0].contentDocument).ready(function() {
+      $($iframe[0].contentDocument).find("#input").html(html);
+      $($iframe[0].contentDocument).find("pre").blur();
+      $this[0].outerHTML = "<iframe>" + $iframe[0].contentDocument.body.outerHTML + "</iframe>";
+    });
   });
 
   $("input[inline][placeholder]").each(function() {
