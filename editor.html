@@ -145,12 +145,13 @@
           var pair = params[i].split('=');
           queryParams[pair[0]] = decodeURIComponent(pair[1]);
         }
+        
         return queryParams;
       }
       
       var params = getQueryParams(window.location);
       if ("code" in params) {
-        $("#input").html(params["code"]);
+        $("#input").text(params["code"]);
       }
       
       $("#input").keyup();
