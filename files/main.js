@@ -51,7 +51,7 @@ $(document).ready(function() {
   $("samp").each(function() {
     var $samp = $(this).hide();
     var frame = document.createElement("iframe");
-    frame.setAttribute("src","/editor.html");
+    frame.setAttribute("src","/editor.html?code=" + encodeURIComponent($samp.html()));
     if ($samp.attr("x-small") !== undefined) {
       frame.setAttribute("x-small","x-small");
     } else if ($samp.attr("small") !== undefined) {
@@ -61,16 +61,8 @@ $(document).ready(function() {
       $(frame).insertAfter($samp);
       return;
     }
-    frame.setAttribute("code",$samp.html());
-    $(frame).hide().insertAfter($samp);
+    $(frame).insertAfter($samp);
   });
-  
-  window.setTimeout(function() {
-    $("iframe[code]").each(function() {
-      $($(this)[0].contentDocument.getElementById("input")).html($(this)[0].getAttribute("code")).trigger("keypress");
-      $(this).show();
-    });
-  },500);
 
   $("input[inline][placeholder]").each(function() {
     $(this).css("width",$(this).attr("placeholder").length * 9.6);
