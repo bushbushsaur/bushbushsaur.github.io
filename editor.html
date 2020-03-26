@@ -134,20 +134,26 @@
         $("#output").scrollTop($("#input").scrollTop());
       });
       
-      $("#input").keyup();
-      
-      window.setTimeout(function() {
-        $code.html($("#input").html()).syntax();
-        var frame = $("iframe")[0].contentDocument;
-        frame.body.innerHTML = $code.text();
-        if ($($("iframe")[0].contentDocument.body).find("title").length > 0 && $($("iframe")[0].contentDocument.body).find("title").text() != "") {
-          $("h1").text($($("iframe")[0].contentDocument.body).find("title").text()).css("font-style","normal");
-        } else {
-          $("h1").text("Untitled document").css("font-style","italic");
+      function getQueryParams(url) {
+        var queryParams = {};
+        var anchor = document.createElement('a');
+        anchor.href = url;
+        var queryStrings = anchor.search.substring(1);
+        var params = queryStrings.split('&');
+
+        for (var i = 0; i < params.length; i++) {
+          var pair = params[i].split('=');
+          queryParams[pair[0]] = decodeURIComponent(pair[1]);
         }
-        $("#output").scrollLeft($("#input").scrollLeft());
-        $("#output").scrollTop($("#input").scrollTop());
-      },2000);
+        return queryParams;
+      }
+      
+      var params = getQueryParams(window.location);
+      if ("code" in params) {
+        $("#input").html(params["code"]);
+      }
+      
+      $("#input").keyup();
     </script>
   </body>
 </html>
