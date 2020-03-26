@@ -8,13 +8,34 @@
     <link rel="icon" href="/images/32x32.png" sizes="32x32" type="image/png">
     <link rel="icon" href="/images/64x64.png" sizes="64x64" type="image/png">
     <script src="/libs/jquery.js"></script>
-    <link rel="stylesheet" href="/libs/jquery-ui.css">
-    <script src="/libs/jquery-ui.js"></script>
-    <link rel="stylesheet" href="/files/theme.css">
-    <link rel="stylesheet" href="/files/main.css">
     <script src="/files/main.js"></script>
   </head>
   <body>
-    <samp></samp>
+    <h1>No challenge loaded.</h1>
+    <script>
+      function getQueryParams(url) {
+        var queryParams = {};
+        var anchor = document.createElement('a');
+        anchor.href = url;
+        var queryStrings = anchor.search.substring(1);
+        var params = queryStrings.split('&');
+
+        for (var i = 0; i < params.length; i++) {
+          var pair = params[i].split('=');
+          queryParams[pair[0]] = decodeURIComponent(pair[1]);
+        }
+        
+        return queryParams;
+      }
+      
+      var params = getQueryParams(window.location);
+      if ("data" in params) {
+        var $data = $("<div>" + params["data"] + "</div>");
+        var data = {
+          code: $data.find("code").html(),
+          steps: 
+        };
+      }
+    </script>
   </body>
 </html>
