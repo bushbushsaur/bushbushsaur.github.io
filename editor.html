@@ -50,9 +50,9 @@
         text-align: center;
         background: #404040;
         display: block;
-        width: calc(100% - 80px);
+        width: calc(100% - 120px);
         top: 0px;
-        left: 80px;
+        left: 120px;
         padding: 10px 0px;
         user-select: none;
       }
@@ -101,6 +101,10 @@
       #plus {
         left: 40px;
       }
+      
+      #reload {
+        left: 80px;
+      }
     </style>
   </head>
   <body>
@@ -110,6 +114,7 @@
     <h1>Untitled document</h1>
     <button id="plus" onclick="font(2);">+</button>
     <button id="minus" onclick="font(-2);">-</button>
+    <button id="reload" onclick="$('#input').keyup();">↻</button>
     <script>
       function font(x) {
         var size = Number($("#input").css("font-size").match(/[0-9]+/)[0]);
