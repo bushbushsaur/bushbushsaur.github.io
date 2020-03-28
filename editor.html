@@ -201,7 +201,7 @@
       }
       
       var params = getQueryParams(window.location);
-      if ("code" in params) {
+      if (("code" in params) && params["code"] !== undefined) {
         $("#input").text(params["code"]);
       }
       
