@@ -11065,6 +11065,7 @@ $.fn.syntax = function(mode) {
     this.arr = a;
   }
   function htmlMode(txt) {
+    txt = "<span html>" + txt + "</span>;
     var rest = txt, done = "", php, comment, angular, startpos, endpos, note, i;
     comment = new extract(rest, "&lt;!--", "--&gt;", commentMode, "W3HTMLCOMMENTPOS");
     rest = comment.rest;
@@ -11145,6 +11146,7 @@ $.fn.syntax = function(mode) {
     return "<span style=color:" + commentcolor + ">" + txt + "</span>";
   }
   function cssMode(txt) {
+    txt = "<span css>" + txt + "</span>;
     var rest = txt, done = "", s, e, comment, i, midz, c, cc;
     comment = new extract(rest, /\/\*/, "*/", commentMode, "W3CSSCOMMENTPOS");
     rest = comment.rest;
@@ -11217,6 +11219,7 @@ $.fn.syntax = function(mode) {
     return "<span style=color:" + cssimportantcolor + ";font-weight:bold;>" + txt + "</span>";
   }
   function jsMode(txt) {
+    txt = "<span js>" + txt + "</span>;
     var rest = txt, done = "", esc = [], i, cc, tt = "", sfnuttpos, dfnuttpos, compos, comlinepos, keywordpos, numpos, mypos, dotpos, y;
     for (i = 0; i < rest.length; i++)  {
       cc = rest.substr(i, 1);
